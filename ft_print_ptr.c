@@ -62,7 +62,7 @@ int	ft_print_ptr(void *ptr)
 	int				len;
 
 	if (!ptr)
-		return (write(1, "0x0", 3));
+		return (write(1, "(nil)", 5));
 	addr = (unsigned long)ptr;
 	str = ft_uitoa_ptr(addr);
 	if (!str)
