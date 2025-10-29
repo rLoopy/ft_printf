@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Created: 2025/09/30 05:07:29 by loopy             #+#    #+#             */
+/*   Updated: 2025/10/17 21:15:41 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_nbr(int n)
+char	*ft_strchr(const char *str, int c)
 {
-	char *str;
-	int len;
+	int	i;
 
-	str = ft_itoa(n);
-	if (!str)
-		return (0);
-	len = ft_strlen(str);
-	write(1, str, len);
-	free(str);
-	return (len);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (str[i] == (char)c)
+		return ((char *)&str[i]);
+	return (NULL);
 }
+
+// cherche PREMIERE occurrence de c
+// je parcours jusqu'a trouver ou arriver au \0
+// attention: faut check le \0 aussi apres la boucle!
+// return pointeur vers position ou NULL

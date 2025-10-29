@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Created: 2025/09/30 02:38:27 by loopy             #+#    #+#             */
+/*   Updated: 2025/10/17 21:14:14 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_nbr(int n)
+int	ft_isalnum(int c)
 {
-	char *str;
-	int len;
-
-	str = ft_itoa(n);
-	if (!str)
-		return (0);
-	len = ft_strlen(str);
-	write(1, str, len);
-	free(str);
-	return (len);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
+
+// lettre OU chiffre
+// j'utilise isalpha OU isdigit
+// facile

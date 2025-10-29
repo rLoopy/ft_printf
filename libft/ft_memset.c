@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Created: 2025/09/30 03:16:09 by loopy             #+#    #+#             */
+/*   Updated: 2025/10/17 21:15:10 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_nbr(int n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	char *str;
-	int len;
+	size_t	i;
 
-	str = ft_itoa(n);
-	if (!str)
-		return (0);
-	len = ft_strlen(str);
-	write(1, str, len);
-	free(str);
-	return (len);
+	i = 0;
+	while (n)
+	{
+		((char *)str)[i] = c;
+		i++;
+		n--;
+	}
+	return (str);
 }
+
+// remplis n bytes de str avec la valeur c
+// cast en (char*) pour acceder byte par byte
+// tant que n>0: str[i]=c, i++, n--

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Created: 2025/09/30 04:58:47 by loopy             #+#    #+#             */
+/*   Updated: 2025/10/17 21:18:54 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_nbr(int n)
+int	ft_toupper(int c)
 {
-	char *str;
-	int len;
-
-	str = ft_itoa(n);
-	if (!str)
-		return (0);
-	len = ft_strlen(str);
-	write(1, str, len);
-	free(str);
-	return (len);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
+
+// si minuscule -> -32 pour passer en maj
+// 'a'=97, 'A'=65 donc diff de 32
+// sinon je retourne direct

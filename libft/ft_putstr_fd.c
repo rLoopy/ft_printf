@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Created: 2025/10/02 12:07:09 by loopy             #+#    #+#             */
+/*   Updated: 2025/10/17 21:15:29 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_nbr(int n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char *str;
-	int len;
+	int	i;
 
-	str = ft_itoa(n);
-	if (!str)
-		return (0);
-	len = ft_strlen(str);
-	write(1, str, len);
-	free(str);
-	return (len);
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }
+
+// ecrit string s dans le fd
+// parcourt s et write chaque char
+// pas de \n a la fin
