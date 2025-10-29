@@ -81,7 +81,8 @@ int	handle_numbers(char c, va_list args)
 }
 int	handle_advanced(char c, va_list args)
 {
-	unsigned int nb;
+	unsigned int	nb;
+	unsigned long	addr;
 
 	if (c == 'u')
 	{
@@ -98,4 +99,10 @@ int	handle_advanced(char c, va_list args)
 		nb = va_arg(args, unsigned int);
 		return (ft_print_hex_upper(nb));
 	}
+	if (c == 'p')
+	{
+		addr = va_arg(args, unsigned long);
+		return (ft_print_ptr((void*)addr));
+	}
+	return (0);
 }
