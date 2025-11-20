@@ -6,7 +6,7 @@
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:15:06 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/27 15:15:06 by rrohrer          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:47:40 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (total);
 }
+
 int	handle_conversion(char c, va_list args)
 {
 	if (c == 'c' || c == 's' || c == '%')
@@ -68,6 +69,7 @@ int	handle_basic(char c, va_list args)
 		return (write(1, "%", 1));
 	return (0);
 }
+
 int	handle_numbers(char c, va_list args)
 {
 	int		nombre;
@@ -79,6 +81,7 @@ int	handle_numbers(char c, va_list args)
 	}
 	return (0);
 }
+
 int	handle_advanced(char c, va_list args)
 {
 	unsigned int	nb;
@@ -102,7 +105,7 @@ int	handle_advanced(char c, va_list args)
 	if (c == 'p')
 	{
 		addr = va_arg(args, unsigned long);
-		return (ft_print_ptr((void*)addr));
+		return (ft_print_ptr((void *)addr));
 	}
 	return (0);
 }

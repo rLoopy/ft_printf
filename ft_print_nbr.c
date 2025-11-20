@@ -6,7 +6,7 @@
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:30:24 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:30:24 by rrohrer          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:43:39 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_print_nbr(int n)
 {
-	char *str;
-	int len;
+	char	*str;
+	int		len;
 
 	str = ft_itoa(n);
 	if (!str)

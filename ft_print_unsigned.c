@@ -6,7 +6,7 @@
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:58:18 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:58:18 by rrohrer          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:46:08 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int	ft_unsigned_len(unsigned int nb)
 	}
 	return (len);
 }
+
 char	*ft_uitoa(unsigned int nb)
 {
-	char *str;
-	int	len;
-	int	i;
+	char	*str;
+	int		len;
+	int		i;
 
 	len = ft_unsigned_len(nb);
 	str = malloc(len + 1);
@@ -51,10 +52,11 @@ char	*ft_uitoa(unsigned int nb)
 	str[len] = '\0';
 	return (str);
 }
+
 int	ft_print_unsigned(unsigned int nb)
 {
-	char *str;
-	int len;
+	char	*str;
+	int		len;
 
 	str = ft_uitoa(nb);
 	if (!str)

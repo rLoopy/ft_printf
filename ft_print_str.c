@@ -6,15 +6,15 @@
 /*   By: rrohrer <rrohrer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:23:35 by rrohrer           #+#    #+#             */
-/*   Updated: 2025/10/28 18:23:35 by rrohrer          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:48:12 by rrohrer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_str(char *s)
+int	ft_print_str(char *s)
 {
-	int i;
+	int	i;
 
 	if (!s)
 		return (write(1, "(null)", 6));
