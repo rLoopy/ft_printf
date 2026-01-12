@@ -24,15 +24,12 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] != '%')
-		{
-			total += write(1, &format[i], 1);
-			i++;
-		}
+			total += write(1, &format[i++], 1);
 		else
 		{
 			i++;
-			total += handle_conversion(format[i], args);
-			i++;
+			if (format[i])
+				total += handle_conversion(format[i++], args);
 		}
 	}
 	va_end(args);

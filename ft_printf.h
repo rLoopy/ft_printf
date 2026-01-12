@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include "libft/libft.h"
 
 int	ft_printf(const char *format, ...);
 int	ft_print_char(int c);
@@ -27,3 +30,5 @@ int	handle_conversion(char c, va_list args);
 int	handle_basic(char c, va_list args);
 int	handle_numbers(char c, va_list args);
 int	handle_advanced(char c, va_list args);
+
+#endif

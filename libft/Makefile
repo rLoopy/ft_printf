@@ -11,8 +11,8 @@ NAME = libft.a
 LIB_H = libft.h
 
 CC = cc
-CDFLAGS = -Wall -Werror -Wextra -I
-# -I will search fot the header file
+CFLAGS = -Wall -Werror -Wextra
+# compilation flags
 
 RM = rm -f
 
@@ -32,7 +32,7 @@ $(NAME) : $(OBJ)
 clean :
 	$(RM) $(OBJ)
 # the wildcard command will take a list of files and return
-# filtered out all the files that don't match an existing file in the project 
+# filtered out all the files that don't match an existing file in the project
 fclean : clean
 	$(RM) $(NAME)
 

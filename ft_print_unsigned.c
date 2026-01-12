@@ -43,7 +43,7 @@ char	*ft_uitoa(unsigned int nb)
 		str[1] = '\0';
 		return (str);
 	}
-	i = len -1;
+	i = len - 1;
 	while (nb)
 	{
 		str[i--] = (nb % 10) + '0';
